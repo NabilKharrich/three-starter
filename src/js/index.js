@@ -1,5 +1,5 @@
-import World from "./js/world";
-import { createMesh } from "./js/components/mesh";
+import World from "./world";
+import { createMesh } from "./components/mesh";
 
 const container = document.querySelector(".world-container");
 
