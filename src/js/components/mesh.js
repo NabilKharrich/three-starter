@@ -1,13 +1,16 @@
-import { BoxGeometry, Mesh, MeshNormalMaterial } from "three";
+import { Group } from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { loadAsset } from "../utils/loader";
 
-function createMesh() {
-  const geometry = new BoxGeometry(1, 1, 1, 20, 20, 20);
-  const material = new MeshNormalMaterial();
-  const mesh = new Mesh(geometry, material);
+function createMesh(res) {
+  console.log(res);
 
+  const [a, b, c, d] = res;
+  const mesh = new Group();
+  mesh.add(b.scene);
   mesh.frame = (time) => {
-    // mesh.rotation.x = time;
-    // mesh.rotation.y = time;
+    mesh.rotation.x = time;
+    mesh.rotation.y = time;
   };
   return mesh;
 }
