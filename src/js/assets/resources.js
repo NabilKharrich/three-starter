@@ -6,7 +6,7 @@ let current;
 let total;
 
 async function getResources() {
-  const array = await loadAsset(
+  const arr = await loadAsset(
     GLTFLoader,
     [
       "./static/630cfe7e8388bff5bfda6692ce4ca40b.glb",
@@ -20,7 +20,7 @@ async function getResources() {
       loader.setDRACOLoader(dracoLoader);
     }
   );
-  return array;
+  return arr;
 }
 
 export { getResources };
